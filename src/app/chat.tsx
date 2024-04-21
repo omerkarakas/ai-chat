@@ -2,7 +2,6 @@
 
 import { useChat } from "ai/react";
 import { useEffect, useState } from "react";
-import ThemeSwitcher from "../../ThemeSwitcher";
 import { Theme } from "react-daisyui";
 
 export default function MyComponent() {
@@ -33,11 +32,9 @@ export default function MyComponent() {
         className={`flex flex-col gap-6 items-stretch w-[calc(100%-4rem)] lg:w-1/2 border border-slate-100 mx-auto p-4 m-4 relative`}
       >
         <label className="swap swap-rotate self-end absolute top-4 right-4">
-          {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
             className="theme-controller"
-            //   value={theme || "light"}
             checked={theme === "light" ? false : true}
             onChange={handleToggle}
           />
@@ -85,23 +82,10 @@ export default function MyComponent() {
                   : "self-end bg-slate-300 rounded-tr-none"
               }`}
             >
-              {/* {m.role === "user" ? "User: " : "AI: "} */}
               {m.content}
             </div>
           ))}
         </div>
-
-        {/* <form onSubmit={handleSubmit}>
-        <label>
-          Say something...
-          <input
-            value={input}
-            onChange={handleInputChange}
-            className="text-black"
-          />
-        </label>
-        <button type="submit">Send</button>
-      </form> */}
       </div>
     </Theme>
   );
